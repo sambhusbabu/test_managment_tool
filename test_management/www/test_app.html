@@ -1,0 +1,16 @@
+{% extends "templates/web.html" %}
+
+{% block page_content %}
+<div id="test-app" style="padding: 24px;"></div>
+
+<script>
+frappe.ready(function() {
+    // Dynamically load the bundle via frappe.require so the hashed asset
+    // filename from the build manifest is used automatically.
+    frappe.require("test_app.bundle.js", function() {
+        new frappe.ui.TestApp({ wrapper: document.getElementById('test-app') });
+    });
+});
+</script>
+
+{% endblock %}
