@@ -1,5 +1,7 @@
 import { createApp } from "vue";
 import Home from "./Home.vue";
+// Import the generated Tailwind CSS for this component bundle
+import "./tailwind.css"
 
 class TestApp {
     constructor({ wrapper, props } = {}) {
