@@ -1,5 +1,14 @@
 {% extends "templates/web.html" %}
 
+{% block head_include %}
+{{ super() }}
+<link type="text/css" rel="stylesheet" href="/assets/frappe/css/fonts/fontawesome/font-awesome.min.css">
+<style>
+    /* Ensure Font Awesome icons use the FontAwesome font even if global fonts are applied later */
+    .fa { font-family: FontAwesome !important; }
+</style>
+{% endblock %}
+
 {% block page_content %}
 <div id="test-app" style="padding: 24px;"></div>
 
@@ -12,5 +21,7 @@ frappe.ready(function() {
     });
 });
 </script>
+   
+<!-- diagnostics removed -->
 
 {% endblock %}
